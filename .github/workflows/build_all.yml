@@ -4,11 +4,11 @@ on:
   workflow_dispatch:
     inputs:
       git-repo:
-        description: Git repo (Optional, defaults to <your name>/aniyomi-extensions
+        description: 'Git repo (Optional, defaults to keiyoushi/extensions-source)'
         default: ''
         required: false
       git-ref:
-        description: Git Ref (Optional, defaults to master)
+        description: 'Git Ref (Optional, defaults to master)'
         default: 'master'
         required: false
 
@@ -34,7 +34,7 @@ jobs:
         if: env.REPO == ''
         run: |
           set -e
-          echo "REPO=${{ github.repository_owner }}/aniyomi-extensions" >> $GITHUB_ENV
+          echo "REPO=keiyoushi/extensions-source" >> $GITHUB_ENV
 
       - name: Clone Repository (Latest)
         uses: actions/checkout@v4
@@ -81,7 +81,7 @@ jobs:
         if: env.REPO == ''
         run: |
           set -e
-          echo "REPO=${{ github.repository_owner }}/aniyomi-extensions" >> $GITHUB_ENV
+          echo "REPO=keiyoushi/extensions-source" >> $GITHUB_ENV
 
       - name: Clone Repository (Latest)
         uses: actions/checkout@v4
